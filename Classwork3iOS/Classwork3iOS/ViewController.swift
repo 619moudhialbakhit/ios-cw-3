@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
      // MARK: - يمكنك اضافه اللغات التي تريدها هنا
-    var  helloLangauge = ["اهلا"," Hola "," Bonjour "," Konnichiwa "," Namaste "]
-    var flagLanguage = [" 🇰🇼 "," 🇪🇸  "," 🇫🇷  "," 🇯🇵 "," 🇮🇳 "]
+    var  helloLangauge = ["اهلا"," Hola "," Bonjour "," Konnichiwa "," Namaste ", "Hi", "merhaba"]
+    var flagLanguage = [" 🇰🇼 "," 🇪🇸  "," 🇫🇷  "," 🇯🇵 "," 🇮🇳 ", "🇺🇸", "🇹🇷"]
      // MARK: - علي كل لغه جديد يجب ان تضيف خانه جديده داخل ال greetingArray
-    var greetingArray : [String] = ["","","","",""]
+    var greetingArray : [String] = ["","","","","","",""]
     
     
     @IBOutlet weak var NameTextfield: UITextField!
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         
         
         // MARK: -  قم باستدعاء الداله هنا
-        
+        addName(name: name, helloArray: helloLangauge, flagArray: flagLanguage)
         
         // MARK: -  النهايه⚠️⚠️لا تقم بغير تحت هذا السطر
         
@@ -47,7 +47,11 @@ class ViewController: UIViewController {
     
     
     // MARK: -  قم بكتابة الداله هنا
-    
+    func addName(name: String, helloArray: [String], flagArray: [String]) {
+        for i in 0..<helloArray.count{
+            greetingArray[i] = "\(helloArray[i]), \(name), \(flagArray[i])"
+        }
+}
     
     
     // MARK: -   النهايه⚠️⚠️ لا تقوم بغير تحت هذا السطر
